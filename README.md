@@ -75,10 +75,6 @@ Here's an update concerning my work on the Random Recipe Finder web app. The ide
 4. **Added Comments**: I added comments in the `onRandomRecipe` function to describe what each section of code is doing.
 5. **Testing**: Completed testing to ensure no bugs in the working of the button and recipe updates.
 
-#### What's Next
-
-1. **Preparing API Integration**: I'll begin learning the use of TheMealDB API to later pull real recipe data from it.
-
 #### What was Hard
 
 - **Getting Used to the Code**: Since some of the setup was already done, I needed extra time to understand how everything worked together. Breaking it down step by step really helped.
