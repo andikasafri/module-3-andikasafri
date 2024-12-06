@@ -58,3 +58,32 @@ Here’s an update on what I’ve been working on for the Random Recipe Finder w
 #### Final Thoughts
 
 The app is functioning as expected, and I’m ready to move on to the next steps. I’m excited to keep learning and improving my skills for the upcoming checkpoint.
+
+Here’s the updated version of your new progress, now written in a style consistent with your previous entry:
+
+### Date: [06/12]
+
+#### Overview
+
+Here's an update concerning my work on the Random Recipe Finder web app. The idea of the app is for users to view random recipes using JavaScript, HTML, and CSS.
+
+#### What I've Done So Far
+
+1. **DOM Manipulation**: Figured out how to update the recipe title, instructions, and image on the page when interacting with the button that was already there.
+2. **Added functionality to the button**: so that upon clicking the button, it would display a random recipe.
+3. **Understanding the Existing Code**: Time was taken to understand how the already connected JavaScript, HTML, and CSS functioned. This helped in understanding where changes should be made.
+4. **Added Comments**: I added comments in the `onRandomRecipe` function to describe what each section of code is doing.
+5. **Testing**: Completed testing to ensure no bugs in the working of the button and recipe updates.
+
+#### What's Next
+
+1. **Preparing API Integration**: I'll begin learning the use of TheMealDB API to later pull real recipe data from it.
+
+#### What was Hard
+
+- **Getting Used to the Code**: Since some of the setup was already done, I needed extra time to understand how everything worked together. Breaking it down step by step really helped.
+- **Learning DOM Manipulation**: It was a bit frustrating to figure out exactly how to update the page's elements correctly in JavaScript. After messing with some code and reading around again, I feel more confident using it.
+
+#### Final Thoughts
+
+Everything is working in the app, and I am ready to move on to the next steps. I'm excited to continue learning and improving my skills for the next checkpoint.

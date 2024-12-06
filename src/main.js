@@ -15,14 +15,27 @@ const getRecipeBtn = document.getElementById(`getRecipeBtn`);
 getRecipeBtn.addEventListener("click", onRandomRecipe);
 
 function onRandomRecipe() {
+  // Select DOM elements for title, instructions, and image
   const recipeTitle = document.querySelector(".recipe-title");
   const recipeInstructions = document.querySelector(".recipe-instruction");
   const recipeImage = document.querySelector(".recipe-image");
 
+  // Update the content with the recipe data
   recipeTitle.innerText = recipe.title;
   recipeInstructions.innerText = recipe.instructions.join("\n");
   recipeImage.src = recipe.image;
   recipeImage.style.width = "200px";
 
+  // Hide the button once recipe is displayed
   getRecipeBtn.style.display = "none";
 }
+
+// console.log(recipe);
+console.log(recipe);
+
+// Test the join() Method
+console.log(recipe.instructions.join("\n"));
+
+// Test DOM Manipulation
+const recipeInstructions = document.querySelector(".recipe-instruction");
+console.log(recipeInstructions.innerText);
