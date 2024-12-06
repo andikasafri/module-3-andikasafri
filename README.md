@@ -83,3 +83,61 @@ Here's an update concerning my work on the Random Recipe Finder web app. The ide
 #### Final Thoughts
 
 Everything is working in the app, and I am ready to move on to the next steps. I'm excited to continue learning and improving my skills for the next checkpoint.
+
+### Task Completion
+
+![Task Completion](./module-3-andikasafri.gif)
+
+### JavaScript Code
+
+Here is the JavaScript code used in the project:
+
+```javascript
+const recipe = {
+  title: "Spaghetti Carbonara",
+  instructions: [
+    "Cook spaghetti according to package instructions.",
+    "In a separate pan, cook pancetta until crispy.",
+    "In a bowl, whisk eggs and grated cheese.",
+    "Combine spaghetti, pancetta, and egg mixture, stirring quickly.",
+    "Serve immediately with additional cheese and black pepper.",
+  ],
+  image: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
+};
+
+const getRecipeBtn = document.getElementById(`getRecipeBtn`);
+
+getRecipeBtn.addEventListener("click", onRandomRecipe);
+
+function onRandomRecipe() {
+  // Select DOM elements for title, instructions, and image
+  const recipeTitle = document.querySelector(".recipe-title");
+  const recipeInstructions = document.querySelector(".recipe-instruction");
+  const recipeImage = document.querySelector(".recipe-image");
+
+  // Update the content with the recipe data
+  recipeTitle.innerText = recipe.title;
+  recipeInstructions.innerText = recipe.instructions.join("\n");
+  recipeImage.src = recipe.image;
+  recipeImage.style.width = "200px";
+
+  // Hide the button once recipe is displayed
+  getRecipeBtn.style.display = "none";
+}
+
+// console.log(recipe);
+console.log(recipe);
+
+// Test the join() Method
+console.log(recipe.instructions.join("\n"));
+
+// Test DOM Manipulation
+const recipeInstructions = document.querySelector(".recipe-instruction");
+console.log(recipeInstructions.innerText);
+```
+
+📧Connect with me:
+
+[![Linkedin Badge](https://img.shields.io/badge/-Andika_Safri-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/andika-safri/)
+[![Instagram Badge](https://img.shields.io/badge/-Andika_Safri-purple?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/dikko_pujangga/)
+[![Gmail Badge](https://img.shields.io/badge/-andika.saf3@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white)](mailto:andika.saf3@gmail.com)
