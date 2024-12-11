@@ -96,11 +96,11 @@ Here is the JavaScript code used in the project:
 const recipe = {
   title: "Spaghetti Carbonara",
   instructions: [
-    "Cook spaghetti according to package instructions.",
-    "In a separate pan, cook pancetta until crispy.",
-    "In a bowl, whisk eggs and grated cheese.",
-    "Combine spaghetti, pancetta, and egg mixture, stirring quickly.",
-    "Serve immediately with additional cheese and black pepper.",
+    "1. Cook spaghetti according to package instructions.",
+    "2. In a separate pan, cook pancetta until crispy.",
+    "3. In a bowl, whisk eggs and grated cheese.",
+    "4. Combine spaghetti, pancetta, and egg mixture, stirring quickly.",
+    "5. Serve immediately with additional cheese and black pepper.",
   ],
   image: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
 };
@@ -134,6 +134,86 @@ console.log(recipe.instructions.join("\n"));
 // Test DOM Manipulation
 const recipeInstructions = document.querySelector(".recipe-instruction");
 console.log(recipeInstructions.innerText);
+```
+
+### Date: [11/12]
+
+#### Overview
+
+Created a basic Random Recipe Finder application to fetch and display a random recipe using TheMealDB API.
+
+#### What I've Done So Far
+
+1. **API Integration**:
+
+   - Successfully connected to TheMealDB API using `fetch()`.
+   - Implemented error handling to manage unsuccessful responses.
+
+2. **Dynamic Content Updates**:
+
+   - Displayed the recipe's title, instructions, and image on the webpage.
+   - Adjusted image size dynamically and updated the DOM directly.
+
+3. **Interactive Button**:
+   - The "Get Recipe" button fetches the recipe and hides itself after one click.
+
+#### Code Challenges
+
+- **Error Handling**: Ensuring meaningful feedback when the API fails.
+- **DOM Manipulation**: Directly updating elements without modularized functions can make code harder to scale.
+
+#### Next Steps
+
+1. Add a loading indicator while fetching data.
+2. Improve error feedback for better user experience.
+3. Refactor the code to make it more modular and reusable.
+
+#### Final Thoughts
+
+The current implementation achieves the basic functionality but requires enhancements to handle edge cases and improve maintainability.
+
+### JavaScript Code
+
+Here is the JavaScript code used in the project:
+
+```javascript
+// Fetch and display a random recipe from TheMealDB API when the button is clicked
+document
+  .getElementById("getRecipeBtn")
+  .addEventListener("click", async function () {
+    try {
+      // Fetch a random recipe from the API
+      const response = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
+
+      // Check if the response is okay (status in the range 200-299)
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      // Parse the JSON data from the response
+      const data = await response.json();
+      const recipe = data.meals[0]; // Get the first meal from the response data
+
+      // Display the recipe title, instructions, and image
+      document.querySelector(".recipe-title").innerText = recipe.strMeal; // Set the recipe title
+      document.querySelector(".recipe-instruction").innerText =
+        recipe.strInstructions; // Set the recipe instructions
+      document.querySelector(".recipe-image").src = recipe.strMealThumb; // Set the recipe image source
+      document.querySelector(".recipe-image").style.width = "200px"; // Set the image width
+
+      // Hide the button after fetching the recipe
+      document.getElementById("getRecipeBtn").style.display = "none";
+    } catch (error) {
+      // Log any errors that occur during the fetch
+      console.log("Something went wrong!", error);
+
+      // Display an error message in the recipe title area
+      document.querySelector(".recipe-title").innerText =
+        "Error fetching recipe.";
+    }
+  });
 ```
 
 📧Connect with me:

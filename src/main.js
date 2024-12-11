@@ -1,41 +1,37 @@
-const recipe = {
-  title: "Spaghetti Carbonara",
-  instructions: [
-    "Cook spaghetti according to package instructions.",
-    "In a separate pan, cook pancetta until crispy.",
-    "In a bowl, whisk eggs and grated cheese.",
-    "Combine spaghetti, pancetta, and egg mixture, stirring quickly.",
-    "Serve immediately with additional cheese and black pepper.",
-  ],
-  image: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
-};
+// Fetch and display a random recipe from TheMealDB API when the button is clicked
+document
+  .getElementById("getRecipeBtn")
+  .addEventListener("click", async function () {
+    try {
+      // Fetch a random recipe from the API
+      const response = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
 
-const getRecipeBtn = document.getElementById(`getRecipeBtn`);
+      // Check if the response is okay (status in the range 200-299)
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-getRecipeBtn.addEventListener("click", onRandomRecipe);
+      // Parse the JSON data from the response
+      const data = await response.json();
+      const recipe = data.meals[0]; // Get the first meal from the response data
 
-function onRandomRecipe() {
-  // Select DOM elements for title, instructions, and image
-  const recipeTitle = document.querySelector(".recipe-title");
-  const recipeInstructions = document.querySelector(".recipe-instruction");
-  const recipeImage = document.querySelector(".recipe-image");
+      // Display the recipe title, instructions, and image
+      document.querySelector(".recipe-title").innerText = recipe.strMeal; // Set the recipe title
+      document.querySelector(".recipe-instruction").innerText =
+        recipe.strInstructions; // Set the recipe instructions
+      document.querySelector(".recipe-image").src = recipe.strMealThumb; // Set the recipe image source
+      document.querySelector(".recipe-image").style.width = "200px"; // Set the image width
 
-  // Update the content with the recipe data
-  recipeTitle.innerText = recipe.title;
-  recipeInstructions.innerText = recipe.instructions.join("\n");
-  recipeImage.src = recipe.image;
-  recipeImage.style.width = "200px";
+      // Hide the button after fetching the recipe
+      document.getElementById("getRecipeBtn").style.display = "none";
+    } catch (error) {
+      // Log any errors that occur during the fetch
+      console.log("Something went wrong!", error);
 
-  // Hide the button once recipe is displayed
-  getRecipeBtn.style.display = "none";
-}
-
-// console.log(recipe);
-console.log(recipe);
-
-// Test the join() Method
-console.log(recipe.instructions.join("\n"));
-
-// Test DOM Manipulation
-const recipeInstructions = document.querySelector(".recipe-instruction");
-console.log(recipeInstructions.innerText);
+      // Display an error message in the recipe title area
+      document.querySelector(".recipe-title").innerText =
+        "Error fetching recipe.";
+    }
+  });
