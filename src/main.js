@@ -1,8 +1,15 @@
 // Constants for DOM elements
 const getRecipeBtn = document.getElementById("getRecipeBtn");
+const tryAnotherBtn = document.createElement("button"); // Create "Try Another Recipe" button
 const recipeTitle = document.querySelector(".recipe-title");
 const recipeInstruction = document.querySelector(".recipe-instruction");
 const recipeImage = document.querySelector(".recipe-image");
+
+// Set up "Try Another Recipe" button
+tryAnotherBtn.textContent = "Try Another Recipe";
+tryAnotherBtn.style.display = "none"; // Initially hidden
+tryAnotherBtn.id = "tryAnotherBtn";
+document.body.appendChild(tryAnotherBtn); // Append the button to the body
 
 // Fetch a random recipe from TheMealDB API
 async function fetchRandomRecipe() {
@@ -30,7 +37,8 @@ function updateUI(recipe) {
     recipeInstruction.innerText = recipe.strInstructions;
     recipeImage.src = recipe.strMealThumb;
     recipeImage.style.width = "200px";
-    getRecipeBtn.style.display = "none"; // Hide the button
+    getRecipeBtn.style.display = "none"; // Hide the initial button
+    tryAnotherBtn.style.display = "block"; // Show "Try Another Recipe" button
   } else {
     recipeTitle.innerText = "No recipe found.";
   }
@@ -46,5 +54,15 @@ async function handleGetRecipe() {
   }
 }
 
-// Event listener for the button
+// Event listener for the initial button
 getRecipeBtn.addEventListener("click", handleGetRecipe);
+
+// Event listener for "Try Another Recipe" button
+tryAnotherBtn.addEventListener("click", async () => {
+  try {
+    const recipe = await fetchRandomRecipe();
+    updateUI(recipe);
+  } catch (error) {
+    recipeTitle.innerText = "Error fetching recipe. Please try again later.";
+  }
+});
