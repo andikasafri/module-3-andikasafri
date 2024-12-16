@@ -1,222 +1,146 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/K1PcQPG7)
+# 🍳 Meme Recipe Generator
 
-# Starter Code for Assignment Module 3
+> A fun way to discover random recipes, enhanced with animations and a dynamic user interface!
 
-## Run the project
+![Meme Recipe Generator Demo](./assets/step4.gif)
 
-- npm install
-- npm run dev
+---
 
-## Standard Assignment
+## 📋 Table of Contents
 
-- Create main.js file inside src folder
-- Based on the assignment brief, create a variable and put the variable value as below.
+1. [Introduction](#introduction)
+2. [How It Works](#how-it-works)
+3. [Features](#features)
+4. [My Progress](#my-progress)
+5. [Demo](#demo)
+6. [Installation & Contribution](#installation--contribution)
+7. [API Integration](#api-integration)
+8. [Connect with Me](#connect-with-me)
 
-  `{
-  title: "Spaghetti Carbonara",
-  instructions:
-    "1. Cook spaghetti according to package instructions. 2. In a separate pan, cook pancetta until crispy. 3. In a bowl, whisk eggs and grated cheese. 4. Combine spaghetti, pancetta, and egg mixture, stirring quickly. 5. Serve immediately with additional cheese and black pepper.",
-  image: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
-}`
+---
 
-- Create an on `click` listener for the button
-- Create a function `onRandomRecipe` where it will set the HTML DOM for `recipe-title` `recipe-instruction` and `recipe-image`
-- The function will also set `recipe-image` width to "200px" and set `#getRecipeBtn` to be disappeared after click.
-- Bind the function `onRandomRecipe` to the `click` listener button
+## 🛠 Introduction
 
-## Challenge your limits!
+The **Meme Recipe Generator** is a lightweight and engaging web application. It fetches random recipes from [TheMealDB](https://www.themealdb.com/) API and displays them dynamically with exciting animations and an interactive UI. It's perfect for discovering new culinary ideas while having fun with meme-like visuals and transitions.
 
-- Make a proper variable name for more a readable code.
-- Put things into a variable for a meaningful naming.
-- Make a function to get the random recipe for more neat code.
+---
 
-## My Progress
+## ⚙️ How It Works
 
-### Date: [05/12]
+1. **Homepage Animation**: Motivational meme quotes fade in on page load.
+2. **Fetch Recipes**: Click the "Get Random Recipe" button to start the magic.
+3. **Countdown Animation**: A fun countdown runs before showing a random recipe.
+4. **Recipe Display**: See the recipe's name, instructions, and image.
+5. **Retry or Home**: Try another recipe or return to the homepage seamlessly.
 
-#### Overview
+---
 
-Here’s an update on what I’ve been working on for the Random Recipe Finder web app. The app uses JavaScript, HTML, and CSS to show random recipes to users.
+## 🌟 Features
 
-#### What I’ve Done So Far
+- **Dynamic Animations**: Powered by GSAP for smooth transitions and hover effects.
+- **Interactive Buttons**: Buttons are animated and responsive to user interactions.
+- **Error Handling**: Provides user feedback when things go wrong (e.g., offline).
+- **Offline Detection**: Displays error messages if the user is offline.
+- **Responsive Design**: Works beautifully on various screen sizes.
 
-1. **DOM Manipulation**: Figured out how to update the recipe title, instructions, and image on the page when interacting with the button that was already there.
-2. **Added Button Functionality**: Made the button work so that when it’s clicked, it displays a random recipe.
-3. **Understanding the Existing Code**: Took time to understand how the JavaScript already connected to the HTML and CSS. This helped me figure out where to make changes.
+---
 
-#### What’s Next
+## 📈 My Progress
 
-1. **Adding Comments**: I’ll add comments to the JavaScript code to make it clearer and easier to read.
-2. **Testing**: I’ll test everything to make sure the button and recipe updates work properly without any bugs.
-3. **Preparing for API Integration**: I’ll start learning about TheMealDB API so I can eventually use it to fetch real recipe data.
+### **Initial Work**
 
-#### What Was Hard
+- **Date**: 05/12
+  - Built initial recipe fetching functionality.
+  - Added DOM manipulation to display recipe data dynamically.
 
-- **Getting Used to the Code**: Since some of the setup was already done, I needed extra time to understand how everything worked together. Breaking it down step by step really helped.
-- **Learning DOM Manipulation**: It was challenging to figure out how to properly update elements on the page using JavaScript. After experimenting and re-reading some resources, I feel more confident now.
+### **Current Progress**
 
-#### Final Thoughts
+- **Date**: 16/12
+  - Integrated animations using GSAP for improved user experience.
+  - Refactored code into reusable modules (`api.js`, `ui.js`, `animations.js`).
+  - Enhanced the countdown and added transition animations between stages.
+  - Improved error handling for network issues or failed API requests.
+  - Optimized and added hover animations for buttons with icons.
 
-The app is functioning as expected, and I’m ready to move on to the next steps. I’m excited to keep learning and improving my skills for the upcoming checkpoint.
+---
 
-Here’s the updated version of your new progress, now written in a style consistent with your previous entry:
+## 🎥 Demo
 
-### Date: [06/12]
+![Meme Recipe Generator Demo](./assets/step3.gif)
 
-#### Overview
+---
 
-Here's an update concerning my work on the Random Recipe Finder web app. The idea of the app is for users to view random recipes using JavaScript, HTML, and CSS.
+## 🔧 Installation & Contribution
 
-#### What I've Done So Far
+### Prerequisites
 
-1. **DOM Manipulation**: Figured out how to update the recipe title, instructions, and image on the page when interacting with the button that was already there.
-2. **Added functionality to the button**: so that upon clicking the button, it would display a random recipe.
-3. **Understanding the Existing Code**: Time was taken to understand how the already connected JavaScript, HTML, and CSS functioned. This helped in understanding where changes should be made.
-4. **Added Comments**: I added comments in the `onRandomRecipe` function to describe what each section of code is doing.
-5. **Testing**: Completed testing to ensure no bugs in the working of the button and recipe updates.
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [NPM](https://www.npmjs.com/) (v6 or higher)
 
-#### What was Hard
+### Steps
 
-- **Getting Used to the Code**: Since some of the setup was already done, I needed extra time to understand how everything worked together. Breaking it down step by step really helped.
-- **Learning DOM Manipulation**: It was a bit frustrating to figure out exactly how to update the page's elements correctly in JavaScript. After messing with some code and reading around again, I feel more confident using it.
+```bash
+# Clone the repository
+git clone https://github.com/revou-fsse-oct24/module-3-andikasafri.git
 
-#### Final Thoughts
+# Navigate to the project directory
+cd module-3-andikasafri
 
-Everything is working in the app, and I am ready to move on to the next steps. I'm excited to continue learning and improving my skills for the next checkpoint.
+# Install dependencies
+npm install
 
-### Task Completion
-
-![Task Completion](./module-3-andikasafri.gif)
-
-### JavaScript Code
-
-Here is the JavaScript code used in the project:
-
-```javascript
-const recipe = {
-  title: "Spaghetti Carbonara",
-  instructions: [
-    "1. Cook spaghetti according to package instructions.",
-    "2. In a separate pan, cook pancetta until crispy.",
-    "3. In a bowl, whisk eggs and grated cheese.",
-    "4. Combine spaghetti, pancetta, and egg mixture, stirring quickly.",
-    "5. Serve immediately with additional cheese and black pepper.",
-  ],
-  image: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
-};
-
-const getRecipeBtn = document.getElementById(`getRecipeBtn`);
-
-getRecipeBtn.addEventListener("click", onRandomRecipe);
-
-function onRandomRecipe() {
-  // Select DOM elements for title, instructions, and image
-  const recipeTitle = document.querySelector(".recipe-title");
-  const recipeInstructions = document.querySelector(".recipe-instruction");
-  const recipeImage = document.querySelector(".recipe-image");
-
-  // Update the content with the recipe data
-  recipeTitle.innerText = recipe.title;
-  recipeInstructions.innerText = recipe.instructions.join("\n");
-  recipeImage.src = recipe.image;
-  recipeImage.style.width = "200px";
-
-  // Hide the button once recipe is displayed
-  getRecipeBtn.style.display = "none";
-}
-
-// console.log(recipe);
-console.log(recipe);
-
-// Test the join() Method
-console.log(recipe.instructions.join("\n"));
-
-// Test DOM Manipulation
-const recipeInstructions = document.querySelector(".recipe-instruction");
-console.log(recipeInstructions.innerText);
+# Start the application
+npm run dev
 ```
 
-### Date: [11/12]
+### Want to Contribute?
 
-#### Overview
+We’d love your help!
 
-Created a basic Random Recipe Finder application to fetch and display a random recipe using TheMealDB API.
+- Fork the repository and create a feature branch.
+- Make your changes and submit a pull request.
 
-#### What I've Done So Far
+---
 
-1. **API Integration**:
+## 🌐 API Integration
 
-   - Successfully connected to TheMealDB API using `fetch()`.
-   - Implemented error handling to manage unsuccessful responses.
+This project leverages [TheMealDB API](https://www.themealdb.com/) for fetching recipes.
 
-2. **Dynamic Content Updates**:
+### Endpoints
 
-   - Displayed the recipe's title, instructions, and image on the webpage.
-   - Adjusted image size dynamically and updated the DOM directly.
+- **`GET /random.php`**: Fetches a random recipe.
 
-3. **Interactive Button**:
-   - The "Get Recipe" button fetches the recipe and hides itself after one click.
+### API Code
 
-#### Code Challenges
-
-- **Error Handling**: Ensuring meaningful feedback when the API fails.
-- **DOM Manipulation**: Directly updating elements without modularized functions can make code harder to scale.
-
-#### Next Steps
-
-1. Add a loading indicator while fetching data.
-2. Improve error feedback for better user experience.
-3. Refactor the code to make it more modular and reusable.
-
-#### Final Thoughts
-
-The current implementation achieves the basic functionality but requires enhancements to handle edge cases and improve maintainability.
-
-### JavaScript Code
-
-Here is the JavaScript code used in the project:
+**`api.js`**:
 
 ```javascript
-// Fetch and display a random recipe from TheMealDB API when the button is clicked
-document
-  .getElementById("getRecipeBtn")
-  .addEventListener("click", async function () {
+const api = (() => {
+  const BASE_URL = "https://www.themealdb.com/api/json/v1/1";
+
+  const fetchRandomRecipe = async () => {
     try {
-      // Fetch a random recipe from the API
-      const response = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/random.php"
-      );
-
-      // Check if the response is okay (status in the range 200-299)
+      const response = await fetch(`${BASE_URL}/random.php`);
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error(`Failed to fetch recipe: ${response.statusText}`);
       }
-
-      // Parse the JSON data from the response
       const data = await response.json();
-      const recipe = data.meals[0]; // Get the first meal from the response data
-
-      // Display the recipe title, instructions, and image
-      document.querySelector(".recipe-title").innerText = recipe.strMeal; // Set the recipe title
-      document.querySelector(".recipe-instruction").innerText =
-        recipe.strInstructions; // Set the recipe instructions
-      document.querySelector(".recipe-image").src = recipe.strMealThumb; // Set the recipe image source
-      document.querySelector(".recipe-image").style.width = "200px"; // Set the image width
-
-      // Hide the button after fetching the recipe
-      document.getElementById("getRecipeBtn").style.display = "none";
+      return data.meals?.[0] || null;
     } catch (error) {
-      // Log any errors that occur during the fetch
-      console.log("Something went wrong!", error);
-
-      // Display an error message in the recipe title area
-      document.querySelector(".recipe-title").innerText =
-        "Error fetching recipe.";
+      console.error("Error fetching recipe:", error);
+      throw error;
     }
-  });
+  };
+
+  return { fetchRandomRecipe };
+})();
+
+export default api;
 ```
 
-📧Connect with me:
+---
+
+## 📧 Connect with Me
 
 [![Linkedin Badge](https://img.shields.io/badge/-Andika_Safri-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/andika-safri/)
 [![Instagram Badge](https://img.shields.io/badge/-Andika_Safri-purple?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/dikko_pujangga/)

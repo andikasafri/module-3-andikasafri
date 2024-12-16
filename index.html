@@ -3,19 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Recipe Finder</title>
-    <link rel="stylesheet" href="./src/style.css" />
+    <title>Meme Recipe Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
-  <body>
-    <div class="container">
-      <h1>Random Recipe Finder</h1>
-      <button id="getRecipeBtn">Get Random Recipe</button>
-      <div id="recipeContainer" class="recipe-container">
-        <img class="recipe-image" src="" alt="" />
-        <h2 class="recipe-title"></h2>
-        <p class="recipe-instruction"></p>
+  <body class="bg-gradient-to-br from-purple-600 to-blue-500 min-h-screen">
+    <!-- Video Background -->
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="background-video">
+        <source src="/assets/zzz.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <!-- Stage 1: Homepage -->
+    <div id="stage1" class="stage">
+      <div class="content-container">
+        <div id="memeQuotes" class="quotes-container">
+          <p class="meme-quote">
+            Unlock the culinary universe, one click at a time! 🚀
+          </p>
+          <p class="meme-quote">
+            This button holds the secrets to ultimate happiness! 🎉
+          </p>
+          <p class="meme-quote">
+            Warning: Clicking may result in extreme food cravings! 🍔
+          </p>
+          <p class="meme-quote">Prepare your taste buds for a wild ride! 🎢</p>
+        </div>
+        <button id="getRecipeBtn" class="primary-button">
+          <span class="icon">👩‍🍳</span>
+          Get Random Recipe
+        </button>
       </div>
     </div>
-    <script type="module" src="./src/main.js"></script>
+
+    <!-- Stage 2: Recipe Display -->
+    <div id="stage2" class="stage hidden">
+      <div class="content-container">
+        <div id="countdown" class="countdown"></div>
+        <div class="recipe-card">
+          <h2 class="recipe-title"></h2>
+          <img class="recipe-image" alt="Recipe" />
+          <div class="recipe-content">
+            <div class="recipe-instruction"></div>
+          </div>
+          <div class="button-container">
+            <button id="tryAnotherBtn" class="secondary-button">
+              <span class="icon">🔄</span>
+              Try Another Recipe
+            </button>
+            <button id="goHomeBtn" class="secondary-button">
+              <span class="icon">🏠</span>
+              Go Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/ui.js"></script>
   </body>
 </html>
